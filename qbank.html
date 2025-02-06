@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RadWorld - Question Bank</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <h1>RadWorld</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="qbank.html">Qbank</a></li>
+                    <li><a href="#anatomy">Anatomy</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="question-bank">
+            <div class="selection-container">
+                <div class="selection-row">
+                    <div class="selection-column">
+                        <h2>Choose System</h2>
+                        <form class="checkbox-container">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="gi" name="system" value="GI">
+                                <label for="gi">GI</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="cardiothoracic" name="system" value="Cardiothoracic">
+                                <label for="cardiothoracic">Cardiothoracic</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="breast" name="system" value="Breast">
+                                <label for="breast">Breast</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="neuro" name="system" value="Neuro">
+                                <label for="neuro">Neuro</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="msk" name="system" value="Msk">
+                                <label for="msk">Msk</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="pediatrics" name="system" value="Pediatrics">
+                                <label for="pediatrics">Pediatrics</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="random" name="system" value="Random">
+                                <label for="random">Random</label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="selection-column">
+                        <h2>Choose Modality</h2>
+                        <form class="checkbox-container">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="xray" name="modality" value="X-ray">
+                                <label for="xray">X-ray</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="ct" name="modality" value="CT">
+                                <label for="ct">CT</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="mri" name="modality" value="MRI">
+                                <label for="mri">MRI</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="ultrasound" name="modality" value="Ultrasound">
+                                <label for="ultrasound">Ultrasound</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="all" name="modality" value="All">
+                                <label for="all">All</label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="selection-column">
+                        <h2>Mode</h2>
+                        <div class="radio-container">
+                            <div class="radio-item">
+                                <input type="radio" id="study-mode" name="mode" value="study" checked>
+                                <label for="study-mode">Study mode</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="test-mode" name="mode" value="test">
+                                <label for="test-mode">Test mode</label>
+                            </div>
+                        </div>
+                        <h2>Number of Questions</h2>
+                        <input type="number" placeholder="40" class="question-input">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 RadWorld. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // No additional JavaScript needed for radio buttons
+    </script>
+</body>
+
+</html>
