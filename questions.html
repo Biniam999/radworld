@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RadWorld - Questions</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <h1>RadWorld</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="qbank.html">Qbank</a></li>
+                    <li><a href="#anatomy">Anatomy</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="question-display">
+            <div id="question-list">
+                <!-- Question will be displayed here -->
+            </div>
+            <div class="button-container">
+                <button id="previous-btn" style="display: none;">Previous</button>
+                <button id="next-btn" class="next-btn">Next</button>
+                <button id="end-test-btn" class="end-test-btn" style="display: none;">End Test</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 RadWorld. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Retrieve the selected systems, modalities, and number of questions from the URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const selectedSystems = urlParams.get('systems').split(',');
+        const selectedModalities = urlParams.get('modalities').split(',');
+        const numQuestions = parseInt(urlParams.get('numQuestions'));
+
+        let currentQuestionIndex = 0;
+        let questions = [];
+        let userAnswers = new Array(numQuestions).fill(null);
+
+        // Load saved progress from local storage
+        function loadProgress() {
+            const savedProgress = localStorage.getItem('quizProgress');
+            if (savedProgress) {
+                const progress = JSON.parse(savedProgress);
+                currentQuestionIndex = progress.currentQuestionIndex || 0;
+                userAnswers = progress.userAnswers || new Array(numQuestions).fill(null);
+            }
+        }
+
+        // Save progress to local storage
+        function saveProgress() {
+            const progress = {
+                currentQuestionIndex,
+                userAnswers
+            };
+            localStorage.setItem('quizProgress', JSON.stringify(progress));
+        }
+
+        async function loadQuestions() {
+            loadProgress();
+            const attemptedQuestions = JSON.parse(localStorage.getItem('attemptedQuestions') || '{}');
+            let questionNumber = 1;
+            for (const system of selectedSystems) {
+                const response = await fetch(`${system}.json`);
+                const data = await response.json();
+                data.questions.forEach(question => {
+                    if ((selectedModalities.includes(question.modality) || selectedModalities.includes('All')) && questions.length < numQuestions && !attemptedQuestions[question.number]) {
+                        question.number = questionNumber++;
+                        questions.push(question);
+                    }
+                });
+            }
+
+            displayQuestion(currentQuestionIndex);
+        }
+
+        function displayQuestion(index) {
+            const questionList = document.getElementById('question-list');
+            questionList.innerHTML = '';
+
+            const question = questions[index];
+            const div = document.createElement('div');
+            div.className = 'question-item';
+            const choices = question.choices.map((choice, choiceIndex) => {
+                const letter = String.fromCharCode(97 + choiceIndex); // 'a', 'b', 'c', etc.
+                return `<div class="radio-item">
+                            <input type="radio" id="${question.number}-${letter}" name="question-${question.number}" value="${choice}" ${userAnswers[index] === choice ? 'checked' : ''} onclick="saveAnswer(${index}, '${choice}')">
+                            <label for="${question.number}-${letter}">${letter.toUpperCase()}. ${choice}</label>
+                        </div>`;
+            }).join('');
+
+            div.innerHTML = `<strong>${question.number}. ${question.question}</strong><br>${question.Image !== "none" ? `<img src="assets/${question.Image}" alt="Question Image"><br>` : ''}${choices}`;
+            questionList.appendChild(div);
+
+            document.getElementById('previous-btn').style.display = index === 0 ? 'none' : 'inline-block';
+            document.getElementById('next-btn').style.display = index === questions.length - 1 ? 'none' : 'inline-block';
+            document.getElementById('end-test-btn').style.display = index === questions.length - 1 ? 'inline-block' : 'none';
+        }
+
+        function saveAnswer(index, choice) {
+            userAnswers[index] = choice;
+            saveProgress();
+        }
+
+        document.getElementById('previous-btn').addEventListener('click', () => {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                displayQuestion(currentQuestionIndex);
+                saveProgress();
+            }
+        });
+
+        document.getElementById('next-btn').addEventListener('click', () => {
+            if (currentQuestionIndex < questions.length - 1) {
+                currentQuestionIndex++;
+                displayQuestion(currentQuestionIndex);
+                saveProgress();
+            }
+        });
+
+        document.getElementById('end-test-btn').addEventListener('click', () => {
+            const confirmEnd = confirm("Are you sure you want to end the test?");
+            if (confirmEnd) {
+                displayScoreBoard();
+            }
+        });
+
+        function displayScoreBoard() {
+            const questionList = document.getElementById('question-list');
+            let correctAnswers = 0;
+            questions.forEach((question, index) => {
+                if (question.answer === userAnswers[index]) {
+                    correctAnswers++;
+                }
+            });
+
+            // Save attempted questions
+            const attemptedQuestions = JSON.parse(localStorage.getItem('attemptedQuestions') || '{}');
+            questions.forEach(question => {
+                attemptedQuestions[question.number] = true;
+            });
+            localStorage.setItem('attemptedQuestions', JSON.stringify(attemptedQuestions));
+
+            questionList.innerHTML = `<h2>Your score: ${correctAnswers}/${questions.length}</h2>`;
+            document.querySelector('.button-container').style.display = 'none';
+            localStorage.removeItem('quizProgress'); // Clear progress
+        }
+
+        // Load questions when the page loads
+        loadQuestions();
+    </script>
+</body>
+
+</html>

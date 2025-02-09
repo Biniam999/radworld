@@ -1,0 +1,84 @@
+{
+    "questions": [
+        {
+            "number": 1,
+            "question": "What is the normal range for GI pH?",
+            "choices": ["1-3", "3-5", "5-7", "7-9"],
+            "answer": "1-3",
+            "modality": "Ultrasound",
+            "Image":"gi1.jpg"
+        },
+        {
+            "number": 2,
+            "question": "What are common findings in a GI X-ray?",
+            "choices": ["Air-fluid levels", "Dilated bowel loops", "Calcifications", "All of the above"],
+            "answer": "All of the above",
+            "modality": "X-ray",
+             "Image":"none"
+        },
+        {
+            "number": 3,
+            "question": "Which of the following is a common symptom of gastroesophageal reflux disease (GERD)?",
+            "choices": ["Heartburn", "Headache", "Shortness of breath", "Rash"],
+            "answer": "Heartburn",
+            "modality": "CT",
+             "Image":"none"
+        },
+        {
+            "number": 4,
+            "question": "What imaging modality is typically used to diagnose gallstones?",
+            "choices": ["CT scan", "MRI", "Ultrasound", "X-ray"],
+            "answer": "Ultrasound",
+            "modality": "Ultrasound",
+             "Image":"none"
+        },
+        {
+            "number": 5,
+            "question": "Which part of the GI tract is primarily responsible for nutrient absorption?",
+            "choices": ["Stomach", "Small intestine", "Colon", "Esophagus"],
+            "answer": "Small intestine",
+            "modality": "MRI",
+             "Image":"none"
+        },
+        {
+            "number": 6,
+            "question": "What is the most common cause of peptic ulcers?",
+            "choices": ["Stress", "Spicy food", "H. pylori infection", "Alcohol"],
+            "answer": "H. pylori infection",
+            "modality": "CT",
+             "Image":"none"
+        },
+        {
+            "number": 7,
+            "question": "Which of the following is a characteristic feature of Crohn's disease?",
+            "choices": ["Continuous inflammation", "Segmental inflammation", "Only affects the colon", "Only affects the rectum"],
+            "answer": "Segmental inflammation",
+            "modality": "X-ray",
+             "Image":"none"
+        },
+        {
+            "number": 8,
+            "question": "What is the primary function of the large intestine?",
+            "choices": ["Digestion of proteins", "Absorption of water", "Breakdown of fats", "Secretion of digestive enzymes"],
+            "answer": "Absorption of water",
+            "modality": "CT",
+             "Image":"none"
+        },
+        {
+            "number": 9,
+            "question": "Which imaging technique is best for visualizing the bile ducts?",
+            "choices": ["CT scan", "MRCP", "Endoscopy", "X-ray"],
+            "answer": "MRCP",
+            "modality": "MRI",
+             "Image":"none"
+        },
+        {
+            "number": 10,
+            "question": "What is the hallmark symptom of irritable bowel syndrome (IBS)?",
+            "choices": ["Abdominal pain", "Fever", "Jaundice", "Vomiting"],
+            "answer": "Abdominal pain",
+            "modality": "CT",
+             "Image":"none"
+        }
+    ]
+}

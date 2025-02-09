@@ -1,0 +1,84 @@
+{
+    "questions": [
+        {
+            "number": 1,
+            "question": "What is the normal range for cardiac output?",
+            "choices": ["4-6 L/min", "6-8 L/min", "8-10 L/min", "10-12 L/min"],
+            "answer": "4-6 L/min",
+            "modality": "Ultrasound",
+             "Image":"none"
+        },
+        {
+            "number": 2,
+            "question": "What are the common findings in a cardiac X-ray?",
+            "choices": ["Cardiomegaly", "Pulmonary edema", "Pleural effusion", "All of the above"],
+            "answer": "All of the above",
+            "modality": "X-ray",
+             "Image":"none"
+        },
+        {
+            "number": 3,
+            "question": "Which artery is commonly used for coronary artery bypass grafting (CABG)?",
+            "choices": ["Radial artery", "Femoral artery", "Internal mammary artery", "Ulnar artery"],
+            "answer": "Internal mammary artery",
+            "modality": "X-ray",
+             "Image":"none"
+        },
+        {
+            "number": 4,
+            "question": "What imaging modality is typically used to diagnose pulmonary embolism?",
+            "choices": ["CT pulmonary angiography", "MRI", "Ultrasound", "X-ray"],
+            "answer": "CT pulmonary angiography",
+            "modality": "CT",
+             "Image":"none"
+        },
+        {
+            "number": 5,
+            "question": "Which part of the heart is primarily responsible for pumping oxygenated blood to the body?",
+            "choices": ["Right atrium", "Right ventricle", "Left atrium", "Left ventricle"],
+            "answer": "Left ventricle",
+            "modality": "Ultrasound",
+             "Image":"none"
+        },
+        {
+            "number": 6,
+            "question": "What is the most common cause of myocardial infarction?",
+            "choices": ["Hypertension", "Atherosclerosis", "Diabetes", "Smoking"],
+            "answer": "Atherosclerosis",
+            "modality": "X-ray",
+             "Image":"none"
+        },
+        {
+            "number": 7,
+            "question": "Which of the following is a characteristic feature of atrial fibrillation?",
+            "choices": ["Regular heart rhythm", "Irregular heart rhythm", "Slow heart rate", "High blood pressure"],
+            "answer": "Irregular heart rhythm",
+            "modality": "MRI",
+             "Image":"none"
+        },
+        {
+            "number": 8,
+            "question": "What is the primary function of the aortic valve?",
+            "choices": ["Prevent backflow of blood into the left ventricle", "Prevent backflow of blood into the right ventricle", "Prevent backflow of blood into the left atrium", "Prevent backflow of blood into the right atrium"],
+            "answer": "Prevent backflow of blood into the left ventricle",
+            "modality": "MRI",
+             "Image":"none"
+        },
+        {
+            "number": 9,
+            "question": "Which imaging technique is best for visualizing the coronary arteries?",
+            "choices": ["CT coronary angiography", "MRI", "Echocardiography", "X-ray"],
+            "answer": "CT coronary angiography",
+            "modality": "CT",
+             "Image":"none"
+        },
+        {
+            "number": 10,
+            "question": "What is the hallmark symptom of congestive heart failure?",
+            "choices": ["Shortness of breath", "Fever", "Jaundice", "Vomiting"],
+            "answer": "Shortness of breath",
+            "modality": "MRI",
+             "Image":"none"
+        }
+    ]
+}

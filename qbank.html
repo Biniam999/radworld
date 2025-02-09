@@ -49,7 +49,7 @@
                             </div>
                             <div class="checkbox-item">
                                 <input type="checkbox" id="msk" name="system" value="Msk">
-                                <label for="msk">Msk</label>
+                                <label for="msk">MSK</label>
                             </div>
                             <div class="checkbox-item">
                                 <input type="checkbox" id="pediatrics" name="system" value="Pediatrics">
@@ -90,17 +90,21 @@
                         <h2>Mode</h2>
                         <div class="radio-container">
                             <div class="radio-item">
-                                <input type="radio" id="study-mode" name="mode" value="study" checked>
+                                <input type="radio" id="study-mode" name="mode" value="study">
                                 <label for="study-mode">Study mode</label>
                             </div>
                             <div class="radio-item">
-                                <input type="radio" id="test-mode" name="mode" value="test">
+                                <input type="radio" id="test-mode" name="mode" value="test" checked>
                                 <label for="test-mode">Test mode</label>
                             </div>
                         </div>
                         <h2>Number of Questions</h2>
-                        <input type="number" placeholder="40" class="question-input">
+                        <input type="number" placeholder="40" class="question-input" id="num-questions" min="1" max="40">
+                        <button id="reset-progress-btn" class="wide-button">Reset Progress</button>
                     </div>
+                </div>
+                <div class="button-container">
+                    <button id="load-questions-btn" class="wide-button">Load Questions</button>
                 </div>
             </div>
         </section>
@@ -111,7 +115,43 @@
     </footer>
 
     <script>
-        // No additional JavaScript needed for radio buttons
+        document.getElementById('load-questions-btn').addEventListener('click', async () => {
+            const selectedSystems = Array.from(document.querySelectorAll('input[name="system"]:checked')).map(cb => cb.value.toLowerCase());
+            const selectedModalities = Array.from(document.querySelectorAll('input[name="modality"]:checked')).map(cb => cb.value);
+            let numQuestions = parseInt(document.getElementById('num-questions').value) || 40;
+
+            if (selectedSystems.length === 0 || selectedModalities.length === 0) {
+                alert("Please select at least one system and one modality.");
+                return;
+            }
+
+            const attemptedQuestions = JSON.parse(localStorage.getItem('attemptedQuestions') || '{}');
+
+            let availableQuestions = 0;
+            for (const system of selectedSystems) {
+                const response = await fetch(`${system}.json`);
+                const data = await response.json();
+                availableQuestions += data.questions.filter(question => (selectedModalities.includes(question.modality) || selectedModalities.includes('All')) && !attemptedQuestions[question.number]).length;
+            }
+
+            if (availableQuestions < numQuestions) {
+                alert(`Not enough questions. The available number of questions in your selection is ${availableQuestions}.`);
+                return;
+            }
+
+            const selectedSystemsString = selectedSystems.join(',');
+            const selectedModalitiesString = selectedModalities.join(',');
+            window.location.href = `questions.html?systems=${selectedSystemsString}&modalities=${selectedModalitiesString}&numQuestions=${numQuestions}`;
+        });
+
+        document.getElementById('reset-progress-btn').addEventListener('click', () => {
+            const confirmReset = confirm("Are you sure you want to reset your progress?");
+            if (confirmReset) {
+                localStorage.removeItem('attemptedQuestions');
+                localStorage.removeItem('quizProgress');
+                alert("Progress has been reset.");
+            }
+        });
     </script>
 </body>
 
