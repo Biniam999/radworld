@@ -6,7 +6,9 @@
             "choices": ["4-6 L/min", "6-8 L/min", "8-10 L/min", "10-12 L/min"],
             "answer": "4-6 L/min",
             "modality": "Ultrasound",
-             "Image":"none"
+             "Image":"none",
+             "detail":"Cardiomyopathy is a common disease. and there are a lot of symptoms of gerd",
+             "detail.image":"none"
         },
         {
             "number": 2,
@@ -14,7 +16,9 @@
             "choices": ["Cardiomegaly", "Pulmonary edema", "Pleural effusion", "All of the above"],
             "answer": "All of the above",
             "modality": "X-ray",
-             "Image":"none"
+             "Image":"none",
+             "detail":"Cardiomyopathy is a common disease. and there are a lot of symptoms of gerd",
+             "detail.image":"none"
         },
         {
             "number": 3,
@@ -22,7 +26,9 @@
             "choices": ["Radial artery", "Femoral artery", "Internal mammary artery", "Ulnar artery"],
             "answer": "Internal mammary artery",
             "modality": "X-ray",
-             "Image":"none"
+             "Image":"none",
+             "detail":"Cardiomyopathy is a common disease. and there are a lot of symptoms of gerd",
+             "detail.image":"none"
         },
         {
             "number": 4,
@@ -30,7 +36,9 @@
             "choices": ["CT pulmonary angiography", "MRI", "Ultrasound", "X-ray"],
             "answer": "CT pulmonary angiography",
             "modality": "CT",
-             "Image":"none"
+             "Image":"none",
+             "detail":"Cardiomyopathy is a common disease. and there are a lot of symptoms of gerd",
+             "detail.image":"none"
         },
         {
             "number": 5,
@@ -38,7 +46,9 @@
             "choices": ["Right atrium", "Right ventricle", "Left atrium", "Left ventricle"],
             "answer": "Left ventricle",
             "modality": "Ultrasound",
-             "Image":"none"
+             "Image":"none",
+             "detail":"Cardiomyopathy is a common disease. and there are a lot of symptoms of gerd",
+             "detail.image":"none"
         },
         {
             "number": 6,
@@ -46,7 +56,9 @@
             "choices": ["Hypertension", "Atherosclerosis", "Diabetes", "Smoking"],
             "answer": "Atherosclerosis",
             "modality": "X-ray",
-             "Image":"none"
+             "Image":"none",
+             "detail":"Cardiomyopathy is a common disease. and there are a lot of symptoms of gerd",
+             "detail.image":"none"
         },
         {
             "number": 7,
@@ -54,7 +66,9 @@
             "choices": ["Regular heart rhythm", "Irregular heart rhythm", "Slow heart rate", "High blood pressure"],
             "answer": "Irregular heart rhythm",
             "modality": "MRI",
-             "Image":"none"
+             "Image":"none",
+             "detail":"Cardiomyopathy is a common disease. and there are a lot of symptoms of gerd",
+             "detail.image":"none"
         },
         {
             "number": 8,
@@ -62,7 +76,9 @@
             "choices": ["Prevent backflow of blood into the left ventricle", "Prevent backflow of blood into the right ventricle", "Prevent backflow of blood into the left atrium", "Prevent backflow of blood into the right atrium"],
             "answer": "Prevent backflow of blood into the left ventricle",
             "modality": "MRI",
-             "Image":"none"
+             "Image":"none",
+             "detail":"Cardiomyopathy is a common disease. and there are a lot of symptoms of gerd",
+             "detail.image":"none"
         },
         {
             "number": 9,
@@ -70,7 +86,9 @@
             "choices": ["CT coronary angiography", "MRI", "Echocardiography", "X-ray"],
             "answer": "CT coronary angiography",
             "modality": "CT",
-             "Image":"none"
+             "Image":"none",
+             "detail":"Cardiomyopathy is a common disease. and there are a lot of symptoms of gerd",
+             "detail.image":"none"
         },
         {
             "number": 10,
@@ -78,7 +96,9 @@
             "choices": ["Shortness of breath", "Fever", "Jaundice", "Vomiting"],
             "answer": "Shortness of breath",
             "modality": "MRI",
-             "Image":"none"
+             "Image":"none",
+             "detail":"Cardiomyopathy is a common disease. and there are a lot of symptoms of gerd",
+             "detail.image":"none"
         }
     ]
 }

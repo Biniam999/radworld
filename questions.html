@@ -34,6 +34,9 @@
                 <button id="next-btn" class="next-btn">Next</button>
                 <button id="end-test-btn" class="end-test-btn" style="display: none;">End Test</button>
             </div>
+            <div id="remaining-questions">
+                Remaining Questions: <span id="remaining-count"></span>
+            </div>
         </section>
     </main>
 
@@ -71,21 +74,38 @@
             localStorage.setItem('quizProgress', JSON.stringify(progress));
         }
 
+        // Update the remaining questions count
+        function updateRemainingQuestions() {
+            const remainingCount = questions.length - currentQuestionIndex;
+            document.getElementById('remaining-count').textContent = remainingCount;
+        }
+
         async function loadQuestions() {
             loadProgress();
             const attemptedQuestions = JSON.parse(localStorage.getItem('attemptedQuestions') || '{}');
             let questionNumber = 1;
+
+            // Load all questions from selected systems and modalities
+            let allQuestions = [];
             for (const system of selectedSystems) {
                 const response = await fetch(`${system}.json`);
                 const data = await response.json();
                 data.questions.forEach(question => {
-                    if ((selectedModalities.includes(question.modality) || selectedModalities.includes('All')) && questions.length < numQuestions && !attemptedQuestions[question.number]) {
-                        question.number = questionNumber++;
-                        questions.push(question);
+                    if (selectedModalities.includes(question.modality) || selectedModalities.includes('All')) {
+                        allQuestions.push(question);
                     }
                 });
             }
 
+            // Filter out already attempted questions
+            questions = allQuestions.filter(question => !attemptedQuestions[question.number]);
+
+            // Limit the number of questions to the requested amount
+            if (questions.length > numQuestions) {
+                questions = questions.slice(0, numQuestions);
+            }
+
+            updateRemainingQuestions();
             displayQuestion(currentQuestionIndex);
         }
 
@@ -121,6 +141,7 @@
             if (currentQuestionIndex > 0) {
                 currentQuestionIndex--;
                 displayQuestion(currentQuestionIndex);
+                updateRemainingQuestions();
                 saveProgress();
             }
         });
@@ -129,6 +150,7 @@
             if (currentQuestionIndex < questions.length - 1) {
                 currentQuestionIndex++;
                 displayQuestion(currentQuestionIndex);
+                updateRemainingQuestions();
                 saveProgress();
             }
         });
@@ -158,7 +180,13 @@
 
             questionList.innerHTML = `<h2>Your score: ${correctAnswers}/${questions.length}</h2>`;
             document.querySelector('.button-container').style.display = 'none';
+            document.getElementById('remaining-questions').style.display = 'none';
             localStorage.removeItem('quizProgress'); // Clear progress
+
+            // Redirect to qbank.html after ending the test
+            setTimeout(() => {
+                window.location.href = 'qbank.html';
+            }, 3000); // Redirect after 3 seconds
         }
 
         // Load questions when the page loads

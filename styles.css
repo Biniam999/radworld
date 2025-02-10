@@ -201,4 +201,5 @@ footer {
 
 .end-test-btn {
     background-color: red; /* Red color for the 'End Test' button */
-    margin-left: 10px; /* Add some space
+    margin-left: 10px; /* Add some space between the buttons */
+}
