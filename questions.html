@@ -82,7 +82,7 @@
 
         async function loadQuestions() {
             loadProgress();
-            const attemptedQuestions = JSON.parse(localStorage.getItem('attemptedQuestions') || '{}');
+            const attemptedQuestions = JSON.parse(localStorage.getItem('attemptedQuestions') || '[]');
             let questionNumber = 1;
 
             // Load all questions from selected systems and modalities
@@ -98,12 +98,17 @@
             }
 
             // Filter out already attempted questions
-            questions = allQuestions.filter(question => !attemptedQuestions[question.number]);
+            questions = allQuestions.filter(question => !attemptedQuestions.includes(question.number));
 
             // Limit the number of questions to the requested amount
             if (questions.length > numQuestions) {
                 questions = questions.slice(0, numQuestions);
             }
+
+            // Re-number the questions starting from 1
+            questions.forEach((question, index) => {
+                question.displayNumber = index + 1;
+            });
 
             updateRemainingQuestions();
             displayQuestion(currentQuestionIndex);
@@ -119,12 +124,12 @@
             const choices = question.choices.map((choice, choiceIndex) => {
                 const letter = String.fromCharCode(97 + choiceIndex); // 'a', 'b', 'c', etc.
                 return `<div class="radio-item">
-                            <input type="radio" id="${question.number}-${letter}" name="question-${question.number}" value="${choice}" ${userAnswers[index] === choice ? 'checked' : ''} onclick="saveAnswer(${index}, '${choice}')">
+                            <input type="radio" id="${question.number}-${letter}" name="question-${question.displayNumber}" value="${choice}" ${userAnswers[index] === choice ? 'checked' : ''} onclick="saveAnswer(${index}, '${choice}')">
                             <label for="${question.number}-${letter}">${letter.toUpperCase()}. ${choice}</label>
                         </div>`;
             }).join('');
 
-            div.innerHTML = `<strong>${question.number}. ${question.question}</strong><br>${question.Image !== "none" ? `<img src="assets/${question.Image}" alt="Question Image"><br>` : ''}${choices}`;
+            div.innerHTML = `<strong>${question.displayNumber}. ${question.question}</strong><br>${question.Image !== "none" ? `<img src="assets/${question.Image}" alt="Question Image"><br>` : ''}${choices}`;
             questionList.appendChild(div);
 
             document.getElementById('previous-btn').style.display = index === 0 ? 'none' : 'inline-block';
@@ -171,22 +176,41 @@
                 }
             });
 
+            const percentageCorrect = (correctAnswers / questions.length) * 100;
+
             // Save attempted questions
-            const attemptedQuestions = JSON.parse(localStorage.getItem('attemptedQuestions') || '{}');
+            const attemptedQuestions = JSON.parse(localStorage.getItem('attemptedQuestions') || '[]');
             questions.forEach(question => {
-                attemptedQuestions[question.number] = true;
+                if (!attemptedQuestions.includes(question.number)) {
+                    attemptedQuestions.push(question.number);
+                }
             });
             localStorage.setItem('attemptedQuestions', JSON.stringify(attemptedQuestions));
 
-            questionList.innerHTML = `<h2>Your score: ${correctAnswers}/${questions.length}</h2>`;
+            questionList.innerHTML = `<h2>Your score: ${correctAnswers}/${questions.length}</h2>
+                                      <h3>${percentageCorrect.toFixed(2)}% Correct</h3>
+                                      <button id="review-answers-btn">Review Answers</button>
+                                      <button id="exit-btn">Exit</button>`;
+            
             document.querySelector('.button-container').style.display = 'none';
             document.getElementById('remaining-questions').style.display = 'none';
             localStorage.removeItem('quizProgress'); // Clear progress
 
-            // Redirect to qbank.html after ending the test
-            setTimeout(() => {
+            document.getElementById('review-answers-btn').addEventListener('click', () => {
+                const reviewData = questions.map((question, index) => ({
+                    number: question.number,
+                    answer: question.answer,
+                    detail: question.detail,
+                    detailImage: question['detail.image'],
+                    userAnswer: userAnswers[index]
+                }));
+                localStorage.setItem('reviewData', JSON.stringify(reviewData));
+                window.location.href = 'review.html';
+            });
+
+            document.getElementById('exit-btn').addEventListener('click', () => {
                 window.location.href = 'qbank.html';
-            }, 3000); // Redirect after 3 seconds
+            });
         }
 
         // Load questions when the page loads
