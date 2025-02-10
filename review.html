@@ -25,12 +25,14 @@
     </header>
 
     <main>
-        <section id="review-answers">
+        <section id="review-display">
             <div id="review-list">
                 <!-- Review answers will be displayed here -->
             </div>
             <div class="button-container">
-                <button id="back-btn" class="wide-button">Back to Qbank</button>
+                <button id="previous-btn" style="display: none;">Previous</button>
+                <button id="next-btn" class="next-btn">Next</button>
+                <button id="back-btn" class="wide-button" style="display: none;">Back to Qbank</button>
             </div>
         </section>
     </main>
@@ -40,20 +42,45 @@
     </footer>
 
     <script>
-        function loadReviewData() {
-            const reviewData = JSON.parse(localStorage.getItem('reviewData') || '[]');
-            const reviewList = document.getElementById('review-list');
+        let currentReviewIndex = 0;
+        let reviewData = [];
 
-            reviewData.forEach((data, index) => {
-                const div = document.createElement('div');
-                div.className = 'review-item';
-                div.innerHTML = `<h3>Question ${index + 1}</h3>
-                                 <p><strong>Answer:</strong> ${data.answer}</p>
-                                 <p>${data.detail}</p>
-                                 ${data.detailImage !== "none" ? `<img src="assets/${data.detailImage}" alt="Detail Image"><br>` : ''}`;
-                reviewList.appendChild(div);
-            });
+        function loadReviewData() {
+            reviewData = JSON.parse(localStorage.getItem('reviewData') || '[]');
+            displayReview(currentReviewIndex);
         }
+
+        function displayReview(index) {
+            const reviewList = document.getElementById('review-list');
+            reviewList.innerHTML = '';
+
+            const data = reviewData[index];
+            const div = document.createElement('div');
+            div.className = 'review-item';
+            div.innerHTML = `<h3>Question ${index + 1}</h3>
+                             <p><strong>Answer:</strong> ${data.answer}</p>
+                             <p>${data.detail}</p>
+                             ${data.detailImage !== "none" ? `<img src="assets/${data.detailImage}" alt="Detail Image"><br>` : ''}`;
+            reviewList.appendChild(div);
+
+            document.getElementById('previous-btn').style.display = index === 0 ? 'none' : 'inline-block';
+            document.getElementById('next-btn').style.display = index === reviewData.length - 1 ? 'none' : 'inline-block';
+            document.getElementById('back-btn').style.display = index === reviewData.length - 1 ? 'inline-block' : 'none';
+        }
+
+        document.getElementById('previous-btn').addEventListener('click', () => {
+            if (currentReviewIndex > 0) {
+                currentReviewIndex--;
+                displayReview(currentReviewIndex);
+            }
+        });
+
+        document.getElementById('next-btn').addEventListener('click', () => {
+            if (currentReviewIndex < reviewData.length - 1) {
+                currentReviewIndex++;
+                displayReview(currentReviewIndex);
+            }
+        });
 
         document.getElementById('back-btn').addEventListener('click', () => {
             window.location.href = 'qbank.html';
