@@ -124,7 +124,7 @@
             const choices = question.choices.map((choice, choiceIndex) => {
                 const letter = String.fromCharCode(97 + choiceIndex); // 'a', 'b', 'c', etc.
                 return `<div class="radio-item">
-                            <input type="radio" id="${question.number}-${letter}" name="question-${question.displayNumber}" value="${choice}" ${userAnswers[index] === choice ? 'checked' : ''} onclick="saveAnswer(${index}, '${choice}')">
+                            <input type="radio" id="${question.number}-${letter}" name="question-${question.displayNumber}" value="${letter.toUpperCase()}" ${userAnswers[index] === letter.toUpperCase() ? 'checked' : ''} onclick="saveAnswer(${index}, '${letter.toUpperCase()}')">
                             <label for="${question.number}-${letter}">${letter.toUpperCase()}. ${choice}</label>
                         </div>`;
             }).join('');
@@ -203,7 +203,7 @@
                     detail: question.detail,
                     detailImage: question['detail.image'],
                     userAnswer: userAnswers[index]
-                }));    
+                }));
                 localStorage.setItem('reviewData', JSON.stringify(reviewData));
                 window.location.href = 'review.html';
             });
