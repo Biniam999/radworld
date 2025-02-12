@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RadWorld - Progress</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <h1>RadWorld</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="qbank.html">Qbank</a></li>
+                    <li><a href="progress.html">Progress</a></li>
+                    <li><a href="#anatomy">Anatomy</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="progress">
+            <h2>Your Progress</h2>
+            <div class="stats-container">
+                <div class="stat-item">
+                    <h3>Total Questions Done</h3>
+                    <p id="total-questions-done">0</p>
+                </div>
+                <div class="stat-item">
+                    <h3>Total Correct Answers</h3>
+                    <p id="total-correct-answers">0</p>
+                </div>
+                <div class="stat-item">
+                    <h3>Total Incorrect Answers</h3>
+                    <p id="total-incorrect-answers">0</p>
+                </div>
+                <div class="stat-item">
+                    <h3>Percentage Correct</h3>
+                    <p id="percentage-correct">0%</p>
+                </div>
+            </div>
+            <button id="reset-progress-btn" class="wide-button">Reset Progress</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 RadWorld. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Load progress from localStorage
+        function loadProgress() {
+            const attemptedQuestions = JSON.parse(localStorage.getItem('attemptedQuestions') || '{}');
+            const totalQuestionsDone = Object.keys(attemptedQuestions).length;
+            const totalCorrectAnswers = Object.values(attemptedQuestions).filter(q => q.correct).length;
+            const totalIncorrectAnswers = totalQuestionsDone - totalCorrectAnswers;
+            const percentageCorrect = totalQuestionsDone > 0 ? (totalCorrectAnswers / totalQuestionsDone * 100).toFixed(2) : 0;
+
+            document.getElementById('total-questions-done').textContent = totalQuestionsDone;
+            document.getElementById('total-correct-answers').textContent = totalCorrectAnswers;
+            document.getElementById('total-incorrect-answers').textContent = totalIncorrectAnswers;
+            document.getElementById('percentage-correct').textContent = `${percentageCorrect}%`;
+        }
+
+        // Reset progress
+        document.getElementById('reset-progress-btn').addEventListener('click', () => {
+            const confirmReset = confirm("Are you sure you want to reset your progress?");
+            if (confirmReset) {
+                localStorage.removeItem('attemptedQuestions');
+                alert("Progress has been reset.");
+                loadProgress();
+            }
+        });
+
+        // Load progress when the page loads
+        loadProgress();
+    </script>
+</body>
+
+</html>
