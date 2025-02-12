@@ -10,8 +10,8 @@
                 "Anterior horn of the medial meniscus"
             ],
             "answer": "C",
-            "modality": "",
-            "Image": "none",
+            "modality": "MRI",
+            "Image": "msk1.png",
             "detail": "Along with the fabella and cyamella, the meniscal ossicle is one of the three most common sesamoid bones and ossicles of the knee. It is most commonly seen in the posterior horn of the medial meniscus. It usually presents in young men. It is seen in <1% of knee examinations. On radiographs, it presents as a triangular opacity at the periphery of the meniscus. MR, CT, and ultrasound will demonstrate an intrameniscal location.",
             "detail.image": "none"
         },
@@ -25,8 +25,8 @@
                 "Groove for the median nerve"
             ],
             "answer": "B",
-            "modality": "",
-            "Image": "none",
+            "modality": "X-ray",
+            "Image": "msk2.png",
             "detail": "The lucency in the cortex of the radius is the classic location for the nutrient channel. It is important to know this normal structure to avoid describing a fracture for this finding.",
             "detail.image": "none"
         },
@@ -40,8 +40,8 @@
                 "Greenstick fracture of the radius and ulna"
             ],
             "answer": "A",
-            "modality": "",
-            "Image": "none",
+            "modality": "X-ray",
+            "Image": "msk3.png",
             "detail": "The alignment of the radius and ulna is associated with physiologic bowing. This finding is often seen in the setting of negative ulnar variance, which this patient has but is somewhat difficult to detect on the provided images.",
             "detail.image": "none"
         },
@@ -55,8 +55,8 @@
                 "Nuclear medicine bone scan"
             ],
             "answer": "A",
-            "modality": "",
-            "Image": "none",
+            "modality": "X-ray",
+            "Image": "msk4.png",
             "detail": "The lucency in the humeral head has a cyst-like appearance; however, this is the classic location for the pseudolesion of the humeral head, which is typically noted on internal rotation views of the shoulder. Additional radiographic views, such as an external rotation view, will not demonstrate a similar finding, indicating this finding is not a true lesion.",
             "detail.image": "none"
         },
@@ -70,8 +70,8 @@
                 "Metaphyseal lines"
             ],
             "answer": "C",
-            "modality": "",
-            "Image": "none",
+            "modality": "X-ray",
+            "Image": "msk5.png",
             "detail": "The lines are thin, sclerotic bands in the proximal metaphysis of the tibia. They are transverse growth lines and typically reflect prior osteoblastic activity during the recovery phase after an illness. Metaphyseal lines, on the other hand, are dense lines at the zone of provisional calcification immediately adjacent to the physis and do not extend into the proximal metaphysis. Stress fractures are seen as a lucency in the cortex of the bone, while lead lines are dense metaphyseal lines, often seen in the knee and wrist.",
             "detail.image": "none"
         },
@@ -85,8 +85,8 @@
                 "Origin of the medial head of the gastrocnemius tendon"
             ],
             "answer": "D",
-            "modality": "",
-            "Image": "none",
+            "modality": "MRI",
+            "Image": "msk6.png",
             "detail": "Periosteal desmoid has many other names, including avulsive cortical irregularity, distal metaphyseal femoral defect, cortical desmoid, and medial supracondylar defect of the femur. The finding is characteristically seen in the posteromedial cortex of the distal end of the femur, adjacent to the medial femoral condyle. It is located at the insertion of the adductor magnus aponeurosis or the origin of the medial head of the gastrocnemius tendon. It is typically seen in patients ages 15 to 20 years and may be a reaction to trauma. On radiographs, it demonstrates a saucer-like lucent defect. It is typically hypointense on T1-weighted MR images and hyperintense on T2-weighted MR images. It is a benign finding, and no further imaging is needed.",
             "detail.image": "none"
         },
@@ -100,8 +100,8 @@
                 "Plantaris muscle"
             ],
             "answer": "C",
-            "modality": "",
-            "Image": "none",
+            "modality": "MRI",
+            "Image": "msk7.png",
             "detail": "The arrow points to the accessory flexor digitorum longus. The three normal tendons of the medial ankle are visualized separate from this structure, indicating this is an accessory muscle. There are three accessory muscles, which can be seen in the medial ankle: the accessory flexor digitorum longus, accessory soleus, and peroneocalcaneus internus. Of these, only the accessory soleus is located superficial to the flexor retinaculum outside of the tarsal tunnel. The most common accessory muscle seen in the lateral ankle is the peroneus quartus.",
             "detail.image": "none"
         },
@@ -130,8 +130,8 @@
                 "Incompletely fused medial epicondyle"
             ],
             "answer": "B",
-            "modality": "",
-            "Image": "none",
+            "modality": "X-ray",
+            "Image": "msk9.png",
             "detail": "The order of ossification of the elbow begins with the capitellum at ~1 to 2 years of age, radius at 3 years, medial epicondyle at 4 years, trochlea at 8 years, and lateral epicondyle at 10 years. This patient is 15 years old; therefore, the elbow should be ossified. There is a lucency noted in the medial epicondyle, which, given the history of a throwing athlete, is most consistent with an avulsion of the medial epicondyle at the ulnar collateral ligament attachment. In younger patients, before there is complete ossification of the elbow, a similar injury can be caused by avulsion from excessive pull of the common flexor tendon. The ulnar attachment of the ulnar collateral ligament is the sublime tubercle; however, no radiographic abnormality is noted in this location. Medial epicondylitis is related to tendinosis of the common flexor tendon and would not cause the finding noted in this patient.",
             "detail.image": "none"
         }

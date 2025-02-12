@@ -91,7 +91,7 @@
                 const response = await fetch(`${system}.json`);
                 const data = await response.json();
                 data.questions.forEach(question => {
-                    if (selectedModalities.includes(question.modality) || selectedModalities.includes('All')) {
+                    if (selectedModalities.some(modality => question.modalities.includes(modality)) || selectedModalities.includes('All')) {
                         allQuestions.push(question);
                     }
                 });
@@ -199,6 +199,7 @@
             document.getElementById('review-answers-btn').addEventListener('click', () => {
                 const reviewData = questions.map((question, index) => ({
                     number: question.number,
+                    question: question.question,
                     answer: question.answer,
                     detail: question.detail,
                     detailImage: question['detail.image'],
