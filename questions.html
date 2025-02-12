@@ -91,7 +91,7 @@
                 const response = await fetch(`${system}.json`);
                 const data = await response.json();
                 data.questions.forEach(question => {
-                    if (selectedModalities.some(modality => question.modalities.includes(modality)) || selectedModalities.includes('All')) {
+                    if (selectedModalities.includes(question.modality) || selectedModalities.includes('All')) {
                         allQuestions.push(question);
                     }
                 });
