@@ -6,6 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RadWorld - Question Bank</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Add some basic styling for the slider */
+        .slider-container {
+            margin-top: 10px;
+        }
+        .slider {
+            width: 100%;
+        }
+        .slider-value {
+            display: inline-block;
+            margin-left: 10px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 
 <body>
@@ -99,7 +113,10 @@
                             </div>
                         </div>
                         <h2>Number of Questions</h2>
-                        <input type="number" placeholder="40" class="question-input" id="num-questions" min="1" max="40">
+                        <div class="slider-container">
+                            <input type="range" id="num-questions" class="slider" min="1" max="40" value="20">
+                            <span class="slider-value" id="slider-value">20</span>
+                        </div>
                         <button id="reset-progress-btn" class="wide-button">Reset Progress</button>
                     </div>
                 </div>
@@ -115,10 +132,17 @@
     </footer>
 
     <script>
+        // Update the slider value display
+        const slider = document.getElementById('num-questions');
+        const sliderValue = document.getElementById('slider-value');
+        slider.addEventListener('input', () => {
+            sliderValue.textContent = slider.value;
+        });
+
         document.getElementById('load-questions-btn').addEventListener('click', async () => {
             const selectedSystems = Array.from(document.querySelectorAll('input[name="system"]:checked')).map(cb => cb.value.toLowerCase());
             const selectedModalities = Array.from(document.querySelectorAll('input[name="modality"]:checked')).map(cb => cb.value);
-            let numQuestions = parseInt(document.getElementById('num-questions').value) || 40;
+            let numQuestions = parseInt(document.getElementById('num-questions').value);
 
             if (selectedSystems.length === 0 || selectedModalities.length === 0) {
                 alert("Please select at least one system and one modality.");
