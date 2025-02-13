@@ -134,6 +134,156 @@
             "Image": "msk9.png",
             "detail": "The order of ossification of the elbow begins with the capitellum at ~1 to 2 years of age, radius at 3 years, medial epicondyle at 4 years, trochlea at 8 years, and lateral epicondyle at 10 years. This patient is 15 years old; therefore, the elbow should be ossified. There is a lucency noted in the medial epicondyle, which, given the history of a throwing athlete, is most consistent with an avulsion of the medial epicondyle at the ulnar collateral ligament attachment. In younger patients, before there is complete ossification of the elbow, a similar injury can be caused by avulsion from excessive pull of the common flexor tendon. The ulnar attachment of the ulnar collateral ligament is the sublime tubercle; however, no radiographic abnormality is noted in this location. Medial epicondylitis is related to tendinosis of the common flexor tendon and would not cause the finding noted in this patient.",
             "detail.image": "none"
+        }, {
+            "number": 10,
+            "question": "The distribution of skeletal lesions in Ollier disease is best described as",
+            "choices": [
+                "mostly involving the skull and spine.",
+                "predominantly unilateral or asymmetric.",
+                "greater involvement of diaphysis of the long bones when compared to metaphysis.",
+                "bilateral, symmetric epiphyseal involvement."
+            ],
+            "answer": "B",
+            "modality": "",
+            "Image": "none",
+            "detail": "Ollier disease is a nonhereditary dysplasia characterized by the presence of multiple enchondromas. These lesions commonly involve the metaphyseal regions of the long bones and are characteristically unilateral or asymmetric. The skull and spine are spared. Lesions usually regress or stabilize after skeletal maturation. The enchondromas can result in growth disturbance, bowing deformities, and increased risk of sarcomatous degeneration (due primarily to their multiplicity). MR features of these chondroid lesions include lobular margins and internal hyperintensity on T2-weighted MRI.",
+            "detail.image": "none"
+        },
+        {
+            "number": 11,
+            "question": "Ewing sarcoma characteristically occurs in which part of the bone?",
+            "choices": [
+                "Epiphysis",
+                "Metaphysis",
+                "Metadiaphysis",
+                "Periosteum"
+            ],
+            "answer": "C",
+            "modality": "",
+            "Image": "none",
+            "detail": "The majority of cases of Ewing sarcoma are metadiaphyseal in location (44% to 59%), followed by diaphyseal in 33% to 35% and metaphyseal in 5% to 15%. Lesions originating in the epiphysis are rare.",
+            "detail.image": "none"
+        },
+        {
+            "number": 12,
+            "question": "A 45-year-old male presents with painful foot nodules. Based on the MR images, what is the most likely diagnosis?",
+            "choices": [
+                "Forestier disease",
+                "Plantar fasciopathy",
+                "Plantar fibromatosis",
+                "Morton neuroma"
+            ],
+            "answer": "C",
+            "modality": "MRI",
+            "Image": "none",
+            "detail": "Plantar fibromatosis is classified as a type of fibroblastic and myofibroblastic tumor. It accounts for 2.3% of benign tumors of the foot. It is more common in men and bilateral in 20% to 50% of cases. On ultrasound, the lesion is identified as a nodular area in the plantar fascia that is hypoechoic or heterogenous. T1-weighted MRI demonstrates low to isointense signal intensity and fluid sensitive sequences demonstrate heterogeneous signal intensity. Contrast enhancement is variable. Fibromatosis usually occurs at the medial non–weight-bearing surface of the plantar fascia. Forestier disease is also known as diffuse idiopathic skeletal hyperostosis (DISH) and involves the spine. Plantar fasciopathy or fasciitis is the most common cause of heel pain and is characterized by thickening of the fascia, usually at the calcaneal margin, with variable degrees of soft tissue and osseous inflammation. Morton neuroma is mass-like fibrosis of the plantar digital nerve, at the level of the metatarsal heads, most commonly between the second and third intermetatarsal spaces.",
+            "detail.image": "none"
+        },
+        {
+            "number": 13,
+            "question": "A 45-year-old male presents to his primary care provider with a palpable mass. The patient was informed the mass is benign. In regard to the imaged pathology, which feature, when present, would be concerning for malignancy?",
+            "choices": [
+                "Thin septations",
+                "Nonadipose components",
+                "Intramuscular involvement",
+                "Thin rim enhancement"
+            ],
+            "answer": "B",
+            "modality": "",
+            "Image": "none",
+            "detail": "There are a number of features when found within a fatty, soft tissue lesion that should raise suspicion for a possible malignancy such as a liposarcoma. These features include thick septations measuring >2 mm, lesion size larger than 10 cm, and the presence of globular or nodular nonadipose areas.",
+            "detail.image": "none"
+        },
+        {
+            "number": 14,
+            "question": "What is the most frequent donor site for cancellous bone grafting?",
+            "choices": [
+                "Rib",
+                "Iliac crest",
+                "Fibula",
+                "Distal radius"
+            ],
+            "answer": "B",
+            "modality": "",
+            "Image": "none",
+            "detail": "The iliac bone is the most frequent site used for bone graft. It allows for a variety of types of bone, mostly cancellous, and for a variety of uses. The anterior iliac crest is the most easily assessed site for grafting.",
+            "detail.image": "none"
+        },
+        {
+            "number": 15,
+            "question": "Which of the following would be a primary differential consideration for the disease process depicted by the MR images?",
+            "choices": [
+                "Synovial chondromatosis",
+                "Pigmented villonodular synovitis",
+                "Amyloid arthropathy",
+                "Synovial cell sarcoma"
+            ],
+            "answer": "B",
+            "modality": "MRI",
+            "Image": "none",
+            "detail": "Pigmented villonodular synovitis (PVNS) is depicted in the MR images provided. The MR features of PVNS include a synovial based lesion, joint effusion, and osseous erosions, which are more commonly found in the less capacious joints such as the hip, shoulder, elbow, and ankle. In addition, the tendency of these lesions to bleed results in hemosiderin deposition and the associated paramagnetic effects of hemosiderin, which includes a decrease in signal intensity in all pulse sequences, and “blooming” artifact on the gradient-echo sequence. Hemophilic arthropathy, with its repetitive bleeding into the synovial joints, can also lead to absorption of hemosiderin by the synovium and would be a differential consideration.",
+            "detail.image": "none"
+        },
+        {
+            "number": 16,
+            "question": "A 30-year-old male presents with a lesion in the proximal tibia. It is described as a well-defined, lytic lesion without a defined sclerotic margin, eccentric in location, and extending to the subarticular margin of the tibia. What is the most likely diagnosis?",
+            "choices": [
+                "Osteosarcoma",
+                "Giant cell tumor",
+                "Ewing sarcoma",
+                "Metastasis"
+            ],
+            "answer": "B",
+            "modality": "",
+            "Image": "none",
+            "detail": "The question describes the classic appearance of a giant cell tumor, which is located in the metaphysis with epiphyseal extension typically to the subarticular margin. The majority of these tumors occur between the ages of 20 and 50, with peak incidence in the third decade of life. Giant cell tumors may also exhibit radiographically aggressive features such as expansile remodeling, cortical thinning or breakthrough, soft tissue mass, and a wide zone of transition.",
+            "detail.image": "none"
+        },
+        {
+            "number": 17,
+            "question": "A 17-year-old female presented with leg swelling. Based on the images, what is the most likely diagnosis?",
+            "choices": [
+                "Intramuscular hemangioma",
+                "Klippel-Trenaunay-Weber syndrome",
+                "Arteriovascular malformation",
+                "Pseudoaneurysm"
+            ],
+            "answer": "A",
+            "modality": "MRI",
+            "Image": "none",
+            "detail": "Intramuscular hemangiomas are benign tumors with vascular channels. They demonstrate high T2-weighted MR signal, due to slow flow, with enhancement on postcontrast images. Phleboliths may be seen on radiographs, which may be diagnostic.",
+            "detail.image": "none"
+        },
+        {
+            "number": 18,
+            "question": "Which of the following is an appropriate indication for treatment of a nonossifying fibroma?",
+            "choices": [
+                "Pathologic fracture",
+                "Size >3 cm",
+                "Eccentric location",
+                "Lucent radiographic appearance"
+            ],
+            "answer": "A",
+            "modality": "",
+            "Image": "none",
+            "detail": "Nonossifying fibroma (synonyms: fibroxanthoma, benign fibrous cortical defect) is typically a “do not touch” lesion, but if associated with a pathologic fracture, curettage and bone grafting may be indicated.",
+            "detail.image": "none"
+        },
+        {
+            "number": 19,
+            "question": "A 60-year-old female patient had the following bone scan and radiograph. What is the most likely diagnosis?",
+            "choices": [
+                "Paget disease",
+                "Multiple myeloma",
+                "Radiation osteitis",
+                "Osteoblastic metastases"
+            ],
+            "answer": "D",
+            "modality": "",
+            "Image": "none",
+            "detail": "The nuclear bone scan shows heterogeneous, multifocal areas of abnormal osseous uptake throughout the axial and appendicular skeleton, with decreased renal tracer uptake, compatible with a superscan. The correlative radiographic findings show patchy sclerotic lesions within the left femur, with associated ill-defined periosteal reaction. The imaging is consistent with diffuse, osteoblastic metastatic disease.",
+            "detail.image": "none"
         }
+
     ]
 }
