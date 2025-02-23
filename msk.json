@@ -8,7 +8,7 @@
                 "Anterior horn of the lateral meniscus",
                 "Posterior horn of the medial meniscus",
                 "Anterior horn of the medial meniscus"
-            ],
+            ],  
             "answer": "C",
             "modality": "MRI",
             "Image": "msk1.png",
