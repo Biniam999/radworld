@@ -1,0 +1,25 @@
+{
+    "questions": [
+        {
+            "number": 1,
+            "question": "What is the normal range for GI pH?",
+            "choices": ["1-3", "3-5", "5-7", "7-9"],
+            "answer": "1-3",
+            "modality": "Ultrasound",
+            "Image":"gi1.jpg",
+            "detail":"GERD is a common disease. and there are a lot of symptoms of gerd",
+            "detail.image":"none"
+        },
+   
+        {
+            "number": 10,
+            "question": "What is the hallmark symptom of irritable bowel syndrome (IBS)?",
+            "choices": ["Abdominal pain", "Fever", "Jaundice", "Vomiting"],
+            "answer": "Abdominal pain",
+            "modality": "CT",
+             "Image":"none",
+             "detail":"GERD is a common disease. and there are a lot of symptoms of gerd",
+             "detail.image":"none"
+        }
+    ]
+}
